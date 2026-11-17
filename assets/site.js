@@ -10,10 +10,10 @@ const menuButton = document.querySelector('.mobile-nav'), mobileMenu = document.
         htmlLang: 'en', top: ['100% natural from Finland', 'Premium quality berries', 'Sustainable & responsible'], nav: ['Home', 'About us', 'Our berries', 'Quality', 'Contact'], contact: 'Contact us', openMenu: 'Open menu', eyebrow: 'Premium quality from Finland', heroCopy: 'We offer 100% natural wild berries of the highest quality, hand-picked in Finland’s clean forests.', products: 'Our products', badges: ['100%<br>natural', 'from<br>Finland', 'sustainable<br>& responsible'], aboutKicker: 'About Wild Finnish Berries', aboutTitle: 'Pure nature. True taste.<br>Directly from Finland.', aboutBody: 'Wildfinnishberries Oy is a Finnish company specialising in the wholesale, sourcing and sale of wild berries. We work with berry pickers, suppliers and business customers to offer high-quality Finnish berries to domestic and international markets.', aboutMore: 'Read more about us', quality: [['100% natural', 'No additives, no preservatives.'], ['Premium quality', 'Carefully selected berries of the highest quality.'], ['From Finland', 'Picked in Finland’s purest regions.'], ['Sustainable', 'We care for nature and future generations.']], berriesKicker: 'Our berries', berriesTitle: 'Wild berries full of flavour and nourishment', berryNames: ['Blueberries', 'Lingonberries', 'Cloudberries', 'Blackcurrants'], berryDescriptions: ['Sweet, flavourful blueberries packed with antioxidants and vitamins.', 'Fresh, tangy lingonberries, perfect for food and drinks.', 'Exclusive, rare cloudberries with a distinctive taste.', 'Aromatic, vitamin C-rich blackcurrants, perfect for juices and desserts.'], seasons: ['Season: July – September', 'Season: August – September', 'Season: July – August', 'Season: July – August'], seeAll: 'See all products', strips: [['Hand-picked', 'Picked by hand with care.'], ['Pure regions', 'From Finland’s cleanest forests.'], ['Quick freezing', 'Preserves flavour and nutrients.']], formTitle: 'Send a message', fields: ['Name', 'Email', 'Subject', 'Message'], formButton: 'Send message', formNote: 'The form opens your email app and sends to info@wildfinnishberries.fi.', footerTag: '100% natural from Finland', contactLabels: ['Business ID:', 'Opening hours:', 'Tel:', 'Location:', 'Email:'], copyright: '© 2026 Wildfinnishberries Oy. All rights reserved.', policies: 'Privacy policy    Terms', mailName: 'Name', mailEmail: 'Email', alts: ['Finnish blueberries', 'Finnish lingonberries', 'Finnish cloudberries', 'Finnish blackcurrants']
       }
     };
-    const blackcurrantLinkLabels = {
-      sv: 'Mer om svarta vinbär →',
-      fi: 'Lisätietoa mustaherukoista →',
-      en: 'More about blackcurrants →'
+    const berryDetailLinks = {
+      sv: ['Mer om blåbär →', 'Mer om lingon →', 'Mer om hjortron →', 'Mer om svarta vinbär →'],
+      fi: ['Lisätietoa mustikoista →', 'Lisätietoa puolukoista →', 'Lisätietoa lakoista →', 'Lisätietoa mustaherukoista →'],
+      en: ['More about blueberries →', 'More about lingonberries →', 'More about cloudberries →', 'More about blackcurrants →']
     };
     const languageFlags = { sv: 'assets/flag-se.png', fi: 'assets/flag-fi.png', en: 'assets/flag-gb.png' };
     const setText = (selector, value, html = false) => { const node = document.querySelector(selector); if (node) html ? node.innerHTML = value : node.textContent = value; };
@@ -30,8 +30,14 @@ const menuButton = document.querySelector('.mobile-nav'), mobileMenu = document.
       setText('.intro .kicker', t.aboutKicker); setText('.intro .h2', t.aboutTitle, true); setText('.intro .body-copy', t.aboutBody); setText('.intro .outline-btn', `${t.aboutMore} <span>→</span>`, true);
       document.querySelectorAll('.quality').forEach((node, index) => { node.querySelector('h3').textContent = t.quality[index][0]; node.querySelector('p').textContent = t.quality[index][1]; });
       setText('.products .kicker', t.berriesKicker); setText('.products .h2', t.berriesTitle);
-      document.querySelectorAll('.product').forEach((node, index) => { node.querySelector('img').alt = t.alts[index]; node.querySelector('h3').textContent = t.berryNames[index]; node.querySelector('p').textContent = t.berryDescriptions[index]; node.querySelector('.season').textContent = t.seasons[index]; });
-      setText('.product-detail-link', blackcurrantLinkLabels[t.htmlLang]);
+      document.querySelectorAll('.product').forEach((node, index) => {
+        node.querySelector('img').alt = t.alts[index];
+        node.querySelector('h3').textContent = t.berryNames[index];
+        node.querySelector('p').textContent = t.berryDescriptions[index];
+        node.querySelector('.season').textContent = t.seasons[index];
+        const detailLink = node.querySelector('.product-detail-link');
+        if (detailLink) detailLink.textContent = berryDetailLinks[t.htmlLang][index];
+      });
       setText('.products .gold-btn', `${t.seeAll} <span>→</span>`, true);
       document.querySelectorAll('.strip').forEach((node, index) => { node.querySelector('strong').textContent = t.strips[index][0]; node.querySelector('small').textContent = t.strips[index][1]; });
       setText('.contact > .container h3', t.contact);
