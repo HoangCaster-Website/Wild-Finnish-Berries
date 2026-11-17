@@ -1,6 +1,7 @@
 // Additional page content shares the language selected on the landing page.
 const detailTranslations = {
   sv: {
+    requestQuote: 'Begär offert',
     back: '← Till startsidan', aboutTitle: 'Om Wild Finnish Berries',
     aboutLead: 'Finska bär för bärplockare, leverantörer och företagskunder.',
     storyTitle: 'Från Finland till din verksamhet',
@@ -17,6 +18,11 @@ const detailTranslations = {
     titles: { about: 'Om oss', products: 'Alla produkter' }, storyAlt: 'Finska bär i skogen'
   },
   fi: {
+    backToProducts: '← Kaikki tuotteet',
+    requestQuote: 'Pyydä tarjous',
+    productInformation: 'Tuotetiedot ↓',
+    productQuoteNote: 'Kysy saatavuudesta, määristä, pakkauksista ja toimituksesta.',
+    blackcurrantHeading: 'Suomalaiset mustaherukat',
     back: '← Takaisin etusivulle', aboutTitle: 'Tietoa Wild Finnish Berriesistä',
     aboutLead: 'Suomalaisia marjoja poimijoille, toimittajille ja yritysasiakkaille.',
     storyTitle: 'Suomesta yrityksesi tarpeisiin',
@@ -31,7 +37,7 @@ const detailTranslations = {
     productEnquiry: 'Kysy tuotteesta →', subject: 'Tuotetiedustelu: ',
     availabilityTitle: 'Kerro meille tarpeistasi', availabilityBody: 'Ota yhteyttä ajankohtaisesta saatavuudesta, määristä, pakkauksista ja toimituksesta. Yllä olevat kaudet ovat poiminta-aikoja; saatavuus vahvistetaan tiedustelun yhteydessä.',
     titles: { about: 'Meistä', products: 'Kaikki tuotteet' }, storyAlt: 'Suomalaisia metsämarjoja',
-    blueberryTitle: 'Suomalaiset luonnonmustikat – ravinteikkaat luonnonmarjat',
+    blueberryTagline: 'Ravinteikkaat luonnonmarjat',
     blueberryIntro: 'Suomalainen luonnonmustikka (Vaccinium myrtillus) on luonnonvarainen metsämarja, jota arvostetaan sen hyvän maun, tummansinisen mallon ja runsaan luontaisen ravintosisällön vuoksi.',
     blueberryBody: 'Mustikat sisältävät useita tärkeitä vitamiineja ja kivennäisaineita sekä ravintokuitua ja antioksidantteja. Ne tunnetaan erityisesti runsaasta antosyaanipitoisuudestaan. Antosyaanit ovat luontaisia kasviyhdisteitä, jotka antavat marjoille niiden tummansinisen värin.',
     blueberryNutrition: 'Tuoreiden mustikoiden ravintosisältö 100 grammaa kohti',
@@ -45,7 +51,7 @@ const detailTranslations = {
     blueberryQualityBody: 'Suomalaiset luonnonmustikat kasvavat luonnonvaraisina Suomen metsissä. Marjat poimitaan luonnosta, ja niitä voidaan käyttää elintarviketeollisuuden raaka-aineena esimerkiksi mehuissa, hilloissa, smoothieissa, pakastemarjoina ja muissa elintarvikkeissa.',
     blueberryName: 'Suomalaiset luonnonmustikat',
     blueberryUse: 'Elintarvikkeet, mehut, hillot ja muut marjatuotteet.',
-    lingonberryTitle: 'Suomalaiset luonnonpuolukat – luonnonmarjoja Suomen metsistä',
+    lingonberryTagline: 'Luonnonmarjoja Suomen metsistä',
     lingonberryIntro: 'Suomalainen luonnonpuolukka (Vaccinium vitis-idaea) on luonnonvarainen metsämarja, jota arvostetaan sen raikkaan kirpeän maun, kauniin punaisen värin ja luontaisen vitamiini-, kivennäisaine- ja antioksidanttipitoisuuden vuoksi.',
     lingonberryBody: 'Puolukat kasvavat luonnonvaraisina Suomen metsissä, ja ne poimitaan loppukesällä ja syksyllä. Luontaisen ravintosisältönsä ja tunnusomaisen makunsa ansiosta puolukka on arvostettu raaka-aine elintarviketeollisuudessa.',
     lingonberryNutrition: 'Tuoreiden puolukoiden ravintosisältö 100 grammaa kohti',
@@ -65,7 +71,7 @@ const detailTranslations = {
     lingonberryHarvest: 'Luonnonmarjoja Suomen metsistä',
     lingonberryUse: 'Elintarviketeollisuus, mehut, hillot ja muut marjatuotteet.',
     lingonberryCompany1: 'Hankimme suomalaisia luonnonmarjoja ja myymme niitä tukkukaupassa. Tavoitteenamme on tarjota asiakkaillemme laadukkaita luonnonmarjoja Suomen metsistä.',
-    cloudberryTitle: 'Suomalaiset luonnonlakat – arvokkaita marjoja pohjoisesta luonnosta',
+    cloudberryTagline: 'Arvokkaita marjoja pohjoisesta luonnosta',
     cloudberryIntro: 'Suomalainen luonnonlakka (Rubus chamaemorus) on arvostettu pohjoismainen luonnonmarja, joka kasvaa Suomen soilla ja kosteikoilla. Lakkoja arvostetaan niiden ainutlaatuisen aromin, pehmeän rakenteen, kauniin kullankeltaisen värin sekä luontaisen vitamiini- ja antioksidanttipitoisuuden vuoksi.',
     cloudberryBody: 'Lakkaa kutsutaan usein Pohjolan kullaksi. Se on erityisen haluttu elintarviketeollisuudessa ja laadukkaiden marjatuotteiden markkinoilla.',
     cloudberryNutrition: 'Tuoreiden lakkojen ravintosisältö 100 grammaa kohti',
@@ -87,7 +93,7 @@ const detailTranslations = {
     cloudberryCompany1: 'Wild Finnish Berries Oy hankkii suomalaisia luonnonmarjoja ja myy niitä tukkukaupassa.',
     cloudberryCompany2: 'Arvostamme laatua, luonnollista alkuperää ja pitkäaikaista yhteistyötä toimittajiemme ja asiakkaidemme kanssa.',
     cloudberryCompany3: 'Tavoitteenamme on tarjota suomalaisia luonnonmarjoja, joita arvostetaan sekä kotimaisilla että kansainvälisillä markkinoilla.',
-    blackcurrantTitle: 'Suomalaiset mustaherukat – luonnostaan runsaasti vitamiineja ja antioksidantteja',
+    blackcurrantTagline: 'Luonnostaan runsaasti vitamiineja ja antioksidantteja',
     productDescription: 'Tuotekuvaus',
     blackcurrantIntro: 'Mustaherukka (Ribes nigrum) on arvostettu marja, jolla on voimakas maku ja tumma väri. Se sisältää luonnostaan runsaasti vitamiineja, kivennäisaineita ja antioksidantteja.',
     blackcurrantBody: 'Mustaherukat tunnetaan erityisesti suuresta C-vitamiinipitoisuudestaan. Niitä käytetään tuoreina marjoina sekä elintarviketeollisuuden raaka-aineena mehujen, hillojen, mehutiivisteiden, soseiden ja muiden marjatuotteiden valmistuksessa.',
@@ -122,6 +128,11 @@ const detailTranslations = {
     blackcurrantGoal: 'Tavoitteenamme on tarjota korkealaatuisia suomalaisia marjoja sekä kotimaisille että kansainvälisille markkinoille.'
   },
   en: {
+    backToProducts: '← All products',
+    requestQuote: 'Request a quote',
+    productInformation: 'Product information ↓',
+    productQuoteNote: 'Ask us about availability, quantities, packaging and delivery.',
+    blackcurrantHeading: 'Finnish blackcurrants',
     back: '← Back to home', aboutTitle: 'About Wild Finnish Berries',
     aboutLead: 'Finnish berries for berry pickers, suppliers and business customers.',
     storyTitle: 'From Finland to your business',
@@ -136,7 +147,7 @@ const detailTranslations = {
     productEnquiry: 'Enquire about this berry →', subject: 'Product enquiry: ',
     availabilityTitle: 'Let’s talk about your needs', availabilityBody: 'Contact us for current availability, quantities, packaging and delivery. The seasons above indicate harvest periods; availability is confirmed when you enquire.',
     titles: { about: 'About us', products: 'All products' }, storyAlt: 'Finnish berries in the forest',
-    blueberryTitle: 'Finnish wild blueberries – naturally nutrient-rich berries',
+    blueberryTagline: 'Naturally nutrient-rich berries',
     blueberryIntro: 'Finnish wild blueberries (Vaccinium myrtillus) grow naturally in forests and are prized for their flavour, dark blue flesh and abundance of naturally occurring nutrients.',
     blueberryBody: 'Blueberries contain several important vitamins and minerals, as well as dietary fibre and antioxidants. They are particularly well known for their high levels of anthocyanins, the natural plant compounds that give the berries their dark blue colour.',
     blueberryNutrition: 'Nutritional content per 100 grams of fresh blueberries',
@@ -150,7 +161,7 @@ const detailTranslations = {
     blueberryQualityBody: 'Finnish wild blueberries grow naturally in Finland’s forests. The berries are harvested in the wild and can be used by food manufacturers in products such as juices, jams, smoothies, frozen berries and other foods.',
     blueberryName: 'Finnish wild blueberries',
     blueberryUse: 'Foods, juices, jams and other berry products.',
-    lingonberryTitle: 'Finnish wild lingonberries – natural berries from Finnish forests',
+    lingonberryTagline: 'Natural berries from Finnish forests',
     lingonberryIntro: 'Finnish wild lingonberries (Vaccinium vitis-idaea) grow naturally in forests. They are prized for their fresh, tart flavour, bright red colour and naturally occurring vitamins, minerals and antioxidants.',
     lingonberryBody: 'Lingonberries grow wild in Finnish forests and are harvested in late summer and autumn. Their natural nutrient content and distinctive flavour make them a valued ingredient in food manufacturing.',
     lingonberryNutrition: 'Nutritional content per 100 grams of fresh lingonberries',
@@ -170,7 +181,7 @@ const detailTranslations = {
     lingonberryHarvest: 'Wild berries from Finnish forests',
     lingonberryUse: 'Food manufacturing, juices, jams and other berry products.',
     lingonberryCompany1: 'We source and supply Finnish wild berries wholesale. Our aim is to offer our customers high-quality natural berries from Finnish forests.',
-    cloudberryTitle: 'Finnish wild cloudberries – prized berries from the Nordic wilderness',
+    cloudberryTagline: 'Prized berries from the Nordic wilderness',
     cloudberryIntro: 'Finnish wild cloudberries (Rubus chamaemorus) are prized Nordic berries that grow naturally in Finland’s bogs and wetlands. They are valued for their distinctive aroma, soft texture, golden yellow colour and naturally occurring vitamins and antioxidants.',
     cloudberryBody: 'Often called the gold of the Nordic region, cloudberries are particularly sought after in food manufacturing and in the market for speciality berry products.',
     cloudberryNutrition: 'Nutritional content per 100 grams of fresh cloudberries',
@@ -192,7 +203,7 @@ const detailTranslations = {
     cloudberryCompany1: 'Wild Finnish Berries Oy sources and supplies Finnish wild berries wholesale.',
     cloudberryCompany2: 'We value quality, natural origin and long-term relationships with our suppliers and customers.',
     cloudberryCompany3: 'Our aim is to offer natural Finnish berries that are valued in domestic and international markets.',
-    blackcurrantTitle: 'Finnish blackcurrants – naturally rich in vitamins and antioxidants',
+    blackcurrantTagline: 'Naturally rich in vitamins and antioxidants',
     productDescription: 'Product description',
     blackcurrantIntro: 'Blackcurrants (Ribes nigrum) are prized for their intense flavour, dark colour and naturally high levels of vitamins, minerals and antioxidants.',
     blackcurrantBody: 'Blackcurrants are particularly well known for their high vitamin C content. They are used fresh and as an ingredient in the food industry to make juice, jam, cordials, purées and other berry products.',
@@ -237,25 +248,35 @@ const nutritionAmounts = Array.from(document.querySelectorAll('.berry-nutrition 
   defaultText: node.textContent
 }));
 
-let selectedProduct = null;
+const main = document.querySelector('main');
+const { page, berryIndex } = main.dataset;
+const currentBerry = berryIndex === undefined ? null : Number(berryIndex);
+let selectedProduct = currentBerry;
 function applyDetailLanguage(language) {
   const t = detailTranslations[language] || detailTranslations.sv;
+  const { berryNames, alts, seasons } = translations[language] || translations.sv;
   detailNodes.forEach(({ node, key, defaultText }) => {
     node.textContent = t[key] ?? defaultText;
   });
   nutritionAmounts.forEach(({ node, defaultText }) => {
     node.textContent = language === 'en' ? defaultText.replaceAll(',', '.') : defaultText;
   });
+  const enquiry = currentBerry === null ? t.productEnquiry : t.requestQuote + ' →';
   document.querySelectorAll('[data-product]').forEach(link => {
-    link.textContent = t.productEnquiry;
-    link.setAttribute('aria-label', `${t.productEnquiry.replace(' →', '')}: ${translations[language].berryNames[Number(link.dataset.product)]}`);
+    link.textContent = enquiry;
+    link.setAttribute('aria-label', `${enquiry.replace(' →', '')}: ${berryNames[Number(link.dataset.product)]}`);
   });
-  const page = document.querySelector('main').dataset.page;
-  if (page) document.title = `${t.titles[page]} | Wild Finnish Berries`;
+  if (currentBerry !== null) {
+    document.title = `${main.querySelector('h1').textContent} | Wild Finnish Berries`;
+    main.querySelector('.berry-hero-image').alt = alts[currentBerry];
+    main.querySelector('.berry-hero .season').textContent = seasons[currentBerry];
+  } else if (page) {
+    document.title = `${t.titles[page]} | Wild Finnish Berries`;
+  }
   const image = document.querySelector('.about-story img');
   if (image) image.alt = t.storyAlt;
   if (selectedProduct !== null) {
-    document.querySelector('[name="subject"]').value = t.subject + translations[language].berryNames[selectedProduct];
+    document.querySelector('[name="subject"]').value = t.subject + berryNames[selectedProduct];
   }
 }
 document.addEventListener('languagechange', event => applyDetailLanguage(event.detail));
@@ -263,5 +284,14 @@ applyDetailLanguage(document.documentElement.lang);
 document.querySelectorAll('[data-product]').forEach(link => link.addEventListener('click', () => {
   selectedProduct = Number(link.dataset.product);
   applyDetailLanguage(document.documentElement.lang);
-  document.querySelector('[name="name"]').focus({ preventScroll: true });
+  if (currentBerry === null) {
+    document.querySelector('[name="name"]').focus({ preventScroll: true });
+  }
 }));
+
+// Keep links to the former catalogue detail sections working.
+if (page === 'products') {
+  const productCard = document.getElementById(window.location.hash.slice(1));
+  const productLink = productCard?.querySelector('.product-detail-link');
+  if (productLink) window.location.replace(productLink.href);
+}

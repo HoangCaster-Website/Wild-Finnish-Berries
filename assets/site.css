@@ -415,6 +415,7 @@
     }
 
     .product {
+      position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 5px;
@@ -1005,7 +1006,12 @@
     .catalogue-grid .product h3 { font-size: 32px; }
     .catalogue-grid .product p { font-size: 14px; min-height: 0; }
     .catalogue-grid .season { font-size: 10px; margin-top: auto; }
-    .catalogue-grid .product .outline-btn { align-self: start; margin-top: 20px; }
+    .catalogue-grid .product .outline-btn {
+      position: relative;
+      z-index: 1;
+      align-self: start;
+      margin-top: 20px;
+    }
     .product-use { color: var(--muted); font-size: 13px; margin: 0 0 22px; }
     .product-use dt { color: var(--gold-light); font-weight: 600; margin-bottom: 5px; }
     .product-use dd { margin: 0; }
@@ -1022,19 +1028,69 @@
       text-underline-offset: .2em;
     }
 
+    .product .product-detail-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
     .catalogue-grid .product-detail-link { margin: -12px 0 8px; }
 
+    .berry-hero {
+      padding-block: clamp(36px, 6vw, 74px);
+      background: linear-gradient(125deg, var(--forest), var(--ink));
+    }
+
+    .berry-hero .back-link { margin-bottom: 18px; }
+    .berry-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(24px, 5vw, 64px);
+    }
+
+    .berry-hero-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    .berry-hero .detail-title {
+      font-size: clamp(40px, 5.4vw, 68px);
+      margin-bottom: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .berry-tagline {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.7vw, 18px);
+    }
+
+    .berry-hero .season { margin: 0 0 18px; font-size: 11px; }
+    .berry-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 20px;
+    }
+
+    .berry-actions .gold-btn { font-size: 11px; min-height: 48px; }
+    .berry-actions .product-detail-link { align-self: center; }
+    .berry-quote-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+    .berry-information { scroll-margin-top: 16px; }
+    [data-page="berry"] ~ .contact .contact-form { scroll-margin-top: 20px; }
+
     .berry-details {
-      margin-top: 40px;
       padding: clamp(16px, 4vw, 40px);
       border: 1px solid var(--line);
       border-radius: 5px;
       background: var(--forest);
-      scroll-margin-top: 20px;
       overflow-wrap: anywhere;
     }
-
-    .berry-details .h2 { line-height: 1.08; margin-bottom: 28px; }
 
     .berry-details-grid {
       display: grid;
@@ -1048,7 +1104,7 @@
     .berry-description { grid-area: description; }
     .berry-nutrition { grid-area: nutrition; }
     .berry-facts { grid-area: facts; }
-    .berry-details h3, .berry-nutrition caption {
+    .berry-details h2, .berry-nutrition caption {
       color: var(--cream);
       font: 600 25px/1.15 'Cormorant Garamond', Georgia, serif;
       margin: 0 0 12px;
@@ -1058,7 +1114,7 @@
     .berry-description p:last-child, .berry-facts p:last-child { margin-bottom: 0; }
     .berry-details ul { padding-inline-start: 20px; }
     .berry-details li + li { margin-top: 4px; }
-    .berry-facts h3:not(:first-child) { margin-top: 24px; }
+    .berry-facts h2:not(:first-child) { margin-top: 24px; }
 
     .berry-facts dl > div {
       display: grid;
@@ -1095,6 +1151,14 @@
       .product p { font-size: 12px; }
       .detail-title { font-size: clamp(40px, 8vw, 62px); }
     }
+    @media (max-width: 700px) {
+      .berry-hero { padding-block: 28px 34px; }
+      .berry-hero .back-link { margin-bottom: 12px; }
+      .berry-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+      .berry-hero-image { aspect-ratio: 16 / 10; height: auto; }
+      .berry-hero .detail-title { font-size: clamp(35px, 8vw, 50px); }
+    }
+
     @media (max-width: 600px) {
       .detail-heading { padding-top: 40px; }
       .catalogue-grid, .business-facts { grid-template-columns: 1fr; }
@@ -1103,7 +1167,6 @@
         grid-template-areas: "description" "nutrition" "facts";
         grid-template-rows: auto;
       }
-      .berry-details .h2 { font-size: clamp(28px, 7vw, 38px); }
       .berry-nutrition th, .berry-nutrition td { padding-inline: 8px; }
       .catalogue-grid .product-info { padding: 22px; }
       .quality-grid { grid-template-columns: 1fr; }
